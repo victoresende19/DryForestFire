@@ -32,6 +32,9 @@ def set_background(png_file: str):
                 background-color: #F8F8FF;
                 border: 2px solid black;
             }
+            .css-184tjsw, .e16nr0p34{
+                color: black
+            }
         </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
