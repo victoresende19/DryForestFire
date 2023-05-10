@@ -31,6 +31,7 @@ def set_background(png_file: str):
             .css-ocqkz7, .e1tzin5v4, css-12ttj6m, .epcbefy1 {
                 background-color: #F8F8FF;
                 border: 2px solid black;
+                color: black
             }
             .css-184tjsw, .e16nr0p34{
                 color: black
