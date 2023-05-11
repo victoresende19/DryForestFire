@@ -88,6 +88,9 @@ def bar_plot(df: DataFrame, column_x: str, column_y: str, title: str, color_colu
                       marker_line_color='black',
                       marker_line_width=1.5,
                       textposition="outside", cliponaxis=False)
+    fig.update_coloraxes(colorbar=dict(
+        title=dict(text=f'Gradiente'),
+    ))
     fig.update_layout(
         xaxis_title='',
         yaxis_title='',
