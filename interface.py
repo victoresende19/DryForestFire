@@ -7,14 +7,15 @@ import streamlit as st
 import joblib
 from tensorflow.keras.models import load_model
 
-from utils.plots import line_plot
+from utils.plots import line_plot, bar_plot
 from utils.style import set_background
 
 
 df = pd.read_csv('Data/inmet_inpe.csv')
 df = df.rename(columns={'Data Medicao': 'Data Medição',
                         'frequencia_incendios': 'Frequência de incêndios',
-                        'PRECIPITACAO': 'Precipitação'})
+                        'PRECIPITACAO': 'Precipitação',
+                        'mes': 'Mês'})
 
 rede_neural = load_model('Models/rede_neural.h5')
 floresta_aleatoria = joblib.load('Models/floresta_aleatoria')
@@ -37,8 +38,8 @@ with col1:
     st.plotly_chart(line_plot(df, 'Data Medição', 'Frequência de incêndios',
                     'Frequência de incêndios em Brasília - 1998 a 2022', 'red'), use_container_width=True)
 with col2:
-    st.plotly_chart(line_plot(df, 'Data Medição', 'Precipitação',
-                    'Frequência de precipitacao em Brasília - 1998 a 2022', '#1dace0'), use_container_width=True)
+    st.plotly_chart(bar_plot(df.groupby('Mês', sort=False).sum('Frequência de incêndios').reset_index(), 'Mês', 'Frequência de incêndios',
+                    'Quantidade de incêndios por mês em Brasília - 1998 a 2022', 'Frequência de incêndios', 'oranges'), use_container_width=True)
 st.markdown("<h2 style='text-align: center; color: white;'> Previsões </h2>",
             unsafe_allow_html=True)
 
