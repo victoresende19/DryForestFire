@@ -82,7 +82,7 @@ with col1:
 with col2:
     st.markdown(f"""
                 <p style='text-align: justify; color: black; font-size: 18px'> 
-                    Previsão quantidade de incêndios com random forest: {previsao_floresta[0]:.0f} incêndios <br> Previsão quantidade de incêndios com Rede Neural: {previsao_rede[0][0]:.0f} incêndios
+                    Previsão quantidade de incêndios com Random Forest: {previsao_floresta[0]:.0f} incêndios <br> Previsão quantidade de incêndios com Rede Neural: {previsao_rede[0][0]:.0f} incêndios
                 </p>""",
                 unsafe_allow_html=True)
 with col3:
