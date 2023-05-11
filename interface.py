@@ -58,7 +58,7 @@ temp_max = form.slider(
     value=float(26.60))
 
 SPEI3 = form.slider(
-    'SPEI3: ',
+    'SPEI3 (Índice que mede a severidade da seca. Quanto menor, mais seco. Quanto maior, mais úmido): ',
     min_value=float(df.SPEI3.min()),
     max_value=float(df.SPEI3.max()),
     value=float(1.357870))
@@ -82,7 +82,7 @@ with col1:
 with col2:
     st.markdown(f"""
                 <p style='text-align: justify; color: black; font-size: 18px'> 
-                    Previsão quantidade de incêndios com Floresta aleatória: {previsao_floresta[0]:.0f} <br> Previsão quantidade de incêndios com Rede Neural: {previsao_rede[0][0]:.0f}
+                    Previsão quantidade de incêndios com random forest: {previsao_floresta[0]:.0f} incêndios <br> Previsão quantidade de incêndios com Rede Neural: {previsao_rede[0][0]:.0f} incêndios
                 </p>""",
                 unsafe_allow_html=True)
 with col3:
