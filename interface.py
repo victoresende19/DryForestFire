@@ -47,19 +47,19 @@ st.markdown("<h2 style='text-align: center; color: white;'> Previsões </h2>",
 form = st.form(key='my_form')
 
 precipitacao = form.slider(
-    'Precipitação (em mm): ',
+    'Precipitação prevista (em mm): ',
     min_value=float(df.Precipitação.min()),
     max_value=float(df.Precipitação.max()),
     value=float(233.0))
 
 temp_max = form.slider(
-    'Temperatura Máxima Mensal (em °C): ',
+    'Temperatura Máxima Mensal prevista (em °C): ',
     min_value=float(df.TEMPERATURA_MAXIMA_MEDIA.min()),
     max_value=float(df.TEMPERATURA_MAXIMA_MEDIA.max()),
     value=float(26.60))
 
 SPEI3 = form.slider(
-    'SPEI3 (Índice que mede a severidade da seca. Quanto menor, mais seco. Quanto maior, mais úmido): ',
+    'SPEI3 (Índice que mede a severidade da seca. Quanto menor, mais seco. Quanto maior, mais úmido) previsto: ',
     min_value=float(df.SPEI3.min()),
     max_value=float(df.SPEI3.max()),
     value=float(1.357870))
