@@ -63,7 +63,7 @@ with col2:
                     'Quantidade de incêndios por mês em Brasília - 1998 a 2022', 'Frequência de incêndios', 'oranges'), use_container_width=True)
 st.markdown("<h2 style='text-align: center; color: white;'> Previsões dos modelos de Random Forest e Rede Neural</h2>",
             unsafe_allow_html=True)
-st.markdown("<p style='text-align: justify; color: white; font-size: 16px;'> Como citado no estudo, decidiu-se pela aplicação dos dois melhores modelos preditivos: random forest e a arquitetura rede neural através das variáveis precipitação, temperatura máxima e SPEI3. Vale ressaltar que os modelos foram treinados com 24 anos de dados referente ao território de Brasília. Para mais inforamções, acessar a documentação referida no início da página.</p>",
+st.markdown("<p style='text-align: justify; color: white; font-size: 16px;'> Como citado no estudo, decidiu-se pela aplicação dos dois melhores modelos preditivos: random forest e a arquitetura rede neural, através das variáveis precipitação, temperatura máxima, SPEI3 e o mês desejado. Vale ressaltar que os modelos foram treinados com 24 anos de dados referente ao território de Brasília. Para mais inforamções, acessar a documentação referida no início da página.</p>",
             unsafe_allow_html=True)
 
 
