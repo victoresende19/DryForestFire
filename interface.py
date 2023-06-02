@@ -53,8 +53,7 @@ st.markdown("""
             </div>
             """,
             unsafe_allow_html=True)
-#st.markdown("<p style='text-align: justify; color: white;'> A fim de demonstrar a distribuição da quantidade de incêndios pelos anos, decidiu-se pelas breves visualizações abaixo, das quais estão analisadas e melhores detalhadas na pesquisa escrita. Entretanto, no primeiro gráfico é possível identificar anos dos quais houveram fortes picos de queimadas. Da mesma forma, o segundo gráfico revela a agregação mensal das frequências de incêndios florestais, evidenciando que os meses com maior incidência estão relacionados ao período de seca em Brasília, quando a cidade atinge seu pico de escassez de chuvas. </p>",
- #           unsafe_allow_html=True)
+
 col1, col2 = st.columns(2)
 with col1:
     st.plotly_chart(line_plot(df, 'Data Medição', 'Frequência de incêndios',
