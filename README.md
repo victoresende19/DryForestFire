@@ -1,1 +1,8 @@
-# DryForestFire
+# 🍂 Previsão de incêndios no DF 🍂
+<hr>
+
+A estiagem em Brasília, Distrito Federal, traz consigo diversos impactos significativos. Durante os períodos de seca prolongada, os recursos hídricos da região sofrem consideravelmente, levando à diminuição dos níveis de água em rios, lagos e represas. Isso resulta em escassez de água para consumo humano, agrícola e industrial, além de afetar a biodiversidade local. A falta de chuvas também contribui para o aumento da poluição do ar, uma vez que a umidade reduzida dificulta a dispersão dos poluentes. Ademais, a estiagem agrava os problemas relacionados à saúde, como doenças respiratórias e o surgimento de incêndios florestais, colocando em risco a qualidade de vida da população e o equilíbrio dos ecossistemas locais.
+
+A diminuição da umidade do ar e a falta de chuvas tornam a vegetação mais suscetível à propagação do fogo, transformando áreas verdes em verdadeiras fontes de combustível. Além disso, a escassez de água dificulta o combate aos incêndios, tornando-os mais desafiadores de controlar. Os incêndios florestais causam danos significativos ao meio ambiente, resultando na perda de biodiversidade, destruição de habitats naturais e emissão de grandes quantidades de gases de efeito estufa, contribuindo para as mudanças climáticas. Portanto, essa aplicação tem o objetivo de tornar pública a interação de usuários com os modelos preditivos desenvolvidos visando a predição da quantidade de queimadas por variáveis climáticas, do qual pode ser acessada através do link: https://victoresende19-dryforestfire-interface-tq46hi.streamlit.app/.
+
+Victor Resende.

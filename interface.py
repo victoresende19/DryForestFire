@@ -30,9 +30,31 @@ st.markdown("<p style='text-align: center; color: white;'> Por Victor Augusto So
             unsafe_allow_html=True)
 st.markdown("<hr style='height: 5px; color: white; background-color: white' >",
             unsafe_allow_html=True)
-st.markdown("<p style='text-align: justify; color: white;'> A cidade de Brasília possui uma característica climática referente a seca e estiagem. Portanto, esse estudo tenta demonstrar o impacto da estiagem em relacao a quantidade de incêndios na respectiva localidade. Abaixo é possível verificar a série histórica dos incêndios no período de 1998 a 2022.  </p>",
+
+st.markdown("""
+            <div class="container">
+                <p style='text-align: justify; color: white; margin-left: 10px; font-size: 16px'> A estiagem em Brasília, Distrito Federal, traz consigo diversos impactos significativos. Durante os períodos de seca prolongada, os recursos hídricos da região sofrem consideravelmente, levando à diminuição dos níveis de água em rios, lagos e represas. Isso resulta em escassez de água para consumo humano, agrícola e industrial, além de afetar a biodiversidade local. A falta de chuvas também contribui para o aumento da poluição do ar, uma vez que a umidade reduzida dificulta a dispersão dos poluentes. Ademais, a estiagem agrava os problemas relacionados à saúde, como doenças respiratórias e o surgimento de incêndios florestais, colocando em risco a qualidade de vida da população e o equilíbrio dos ecossistemas locais.  </p>  
+                <p style='text-align: justify; color: white; margin-right: 10px; font-size: 16px'> A diminuição da umidade do ar e a falta de chuvas tornam a vegetação mais suscetível à propagação do fogo, transformando áreas verdes em verdadeiras fontes de combustível. Além disso, a escassez de água dificulta o combate aos incêndios, tornando-os mais desafiadores de controlar. Os incêndios florestais causam danos significativos ao meio ambiente, resultando na perda de biodiversidade, destruição de habitats naturais e emissão de grandes quantidades de gases de efeito estufa, contribuindo para as mudanças climáticas. Portanto, essa aplicação tem o objetivo de tornar pública a interação de usuários com os modelos preditivos desenvolvidos visando a predição da quantidade de queimadas por variáveis climáticas, do quail pode-se acessar a documentação do estudo <a href='https://github.com/victoresende19/DryForestFire'>clicando aqui</a>  </p>
+            </div>
+            """,
             unsafe_allow_html=True)
 
+st.markdown("<hr style='height: 5px; color: white; background-color: white' >",
+            unsafe_allow_html=True)
+
+
+st.markdown("<h2 style='text-align: center; color: white;'> Visualização das séries históricas </h2>",
+            unsafe_allow_html=True)
+
+st.markdown("""
+            <div class="container">
+                <p style='text-align: justify; color: white; font-size: 16px; margin-left: 10px'> A fim de demonstrar a distribuição da quantidade de incêndios pelos anos, decidiu-se pelas breves visualizações abaixo, das quais estão analisadas e melhores detalhadas na pesquisa escrita. Entretanto, no primeiro gráfico é possível identificar anos dos quais houveram fortes picos de queimadas.  </p>  
+                <p style='text-align: justify; color: white; font-size: 16px; margin-right: 10px'> Da mesma forma, o segundo gráfico revela a agregação mensal das frequências de incêndios florestais, evidenciando que os meses com maior incidência estão relacionados ao período de seca em Brasília, quando a cidade atinge seu pico de escassez de chuvas. </p>
+            </div>
+            """,
+            unsafe_allow_html=True)
+#st.markdown("<p style='text-align: justify; color: white;'> A fim de demonstrar a distribuição da quantidade de incêndios pelos anos, decidiu-se pelas breves visualizações abaixo, das quais estão analisadas e melhores detalhadas na pesquisa escrita. Entretanto, no primeiro gráfico é possível identificar anos dos quais houveram fortes picos de queimadas. Da mesma forma, o segundo gráfico revela a agregação mensal das frequências de incêndios florestais, evidenciando que os meses com maior incidência estão relacionados ao período de seca em Brasília, quando a cidade atinge seu pico de escassez de chuvas. </p>",
+ #           unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
     st.plotly_chart(line_plot(df, 'Data Medição', 'Frequência de incêndios',
@@ -40,7 +62,9 @@ with col1:
 with col2:
     st.plotly_chart(bar_plot(df.groupby('Mês', sort=False).sum('Frequência de incêndios').reset_index(), 'Mês', 'Frequência de incêndios',
                     'Quantidade de incêndios por mês em Brasília - 1998 a 2022', 'Frequência de incêndios', 'oranges'), use_container_width=True)
-st.markdown("<h2 style='text-align: center; color: white;'> Previsões </h2>",
+st.markdown("<h2 style='text-align: center; color: white;'> Previsões dos modelos de Random Forest e Rede Neural</h2>",
+            unsafe_allow_html=True)
+st.markdown("<p style='text-align: justify; color: white; font-size: 16px;'> Como citado no estudo, decidiu-se pela aplicação dos dois melhores modelos preditivos: random forest e a arquitetura rede neural através das variáveis precipitação, temperatura máxima e SPEI3. Vale ressaltar que os modelos foram treinados com 24 anos de dados referente ao território de Brasília. Para mais inforamções, acessar a documentação referida no início da página.</p>",
             unsafe_allow_html=True)
 
 
@@ -82,7 +106,7 @@ with col1:
     st.write('')
 with col2:
     st.markdown(f"""
-                <p style='text-align: justify; color: black; font-size: 18px'> 
+                <p style='text-align: justify; color: black; font-size: 20px'> 
                     Previsão quantidade de incêndios com Random Forest: {previsao_floresta[0]:.0f} incêndios <br> Previsão quantidade de incêndios com Rede Neural: {previsao_rede[0][0]:.0f} incêndios
                 </p>""",
                 unsafe_allow_html=True)

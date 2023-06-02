@@ -36,6 +36,10 @@ def set_background(png_file: str):
             .css-184tjsw, .e16nr0p34{
                 color: black
             }
+            .container {
+                column-count: 2;
+                column-gap: 20px;
+            }
         </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
