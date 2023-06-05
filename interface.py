@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import time
 
 import base64
 import streamlit as st
@@ -24,9 +25,11 @@ scaler = joblib.load('Models/padronizacao')
 st.set_page_config(page_icon='🔥', page_title='TCC', layout='wide')
 background_image_url = "https://mattbeardart.com/wp-content/uploads/2020/06/2020-4-19-Trial-by-Fire-2000x2000px.jpg"
 set_background('Images/background-app.jpg')
-st.markdown("<h1 style='text-align: center; color: white; text-shadow: 5px 5px 5px #000000; font-size: 42px'> 🍂 Previsão de incêndios no DF 🍂 </h1>",
+st.markdown("<h1 style='text-align: center; color: white; text-shadow: 5px 5px 5px #000000; font-size: 42px'> 🍂 Previsão de incêndios florestais no DF 🍂 </h1>",
             unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: white;'> Por Victor Augusto Souza Resende </p>",
+            unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: white;'> Trabalho de conclusão de curso (IESB) - Bacharelado em ciência de dados e inteligência artificial </p>",
             unsafe_allow_html=True)
 st.markdown("<hr style='height: 5px; color: white; background-color: white' >",
             unsafe_allow_html=True)
@@ -63,7 +66,7 @@ with col2:
                     'Quantidade de incêndios por mês em Brasília - 1998 a 2022', 'Frequência de incêndios', 'oranges'), use_container_width=True)
 st.markdown("<h2 style='text-align: center; color: white;'> Previsões dos modelos de Random Forest e Rede Neural</h2>",
             unsafe_allow_html=True)
-st.markdown("<p style='text-align: justify; color: white; font-size: 16px;'> Como citado no estudo, decidiu-se pela aplicação dos dois melhores modelos preditivos: random forest e a arquitetura rede neural, através das variáveis precipitação, temperatura máxima, SPEI3 e o mês desejado. Vale ressaltar que os modelos foram treinados com 24 anos de dados referente ao território de Brasília. Para mais inforamções, acessar a documentação referida no início da página.</p>",
+st.markdown("<p style='text-align: justify; color: white; font-size: 16px;'> Como citado no estudo, decidiu-se pela aplicação dos dois melhores modelos preditivos: random forest e a arquitetura rede neural, através das variáveis precipitação, temperatura máxima, SPEI3 e o mês desejado. Vale ressaltar que os modelos foram treinados com 24 anos de dados referente ao território de Brasília. Para mais informações dos modelos, como as métricas e criação, acessar a documentação referida no início da página.</p>",
             unsafe_allow_html=True)
 
 
@@ -104,7 +107,9 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.write('')
 with col2:
-    st.markdown(f"""
+    with st.spinner("Fazendo previsão..."):
+        time.sleep(1)
+        st.markdown(f"""
                 <p style='text-align: justify; color: black; font-size: 20px'> 
                     Previsão quantidade de incêndios com Random Forest: {previsao_floresta[0]:.0f} incêndios <br> Previsão quantidade de incêndios com Rede Neural: {previsao_rede[0][0]:.0f} incêndios
                 </p>""",
