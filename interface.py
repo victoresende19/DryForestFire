@@ -22,7 +22,7 @@ rede_neural = load_model('Models/rede_neural.h5')
 floresta_aleatoria = joblib.load('Models/floresta_aleatoria')
 scaler = joblib.load('Models/padronizacao')
 
-st.set_page_config(page_icon='🔥', page_title='FireGuardBSB', layout='wide')
+st.set_page_config(page_icon='🔥', page_title='FireGuard', layout='wide')
 background_image_url = "https://mattbeardart.com/wp-content/uploads/2020/06/2020-4-19-Trial-by-Fire-2000x2000px.jpg"
 set_background('Images/background-app.jpg')
 st.markdown("<h1 style='text-align: center; color: white; text-shadow: 5px 5px 5px #000000; font-size: 42px'> 🍂 Previsão de incêndios florestais no DF 🍂 </h1>",
